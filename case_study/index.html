@@ -1,0 +1,525 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:fragment="head">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+    <title>$Title$</title>
+    <style>
+        .o{
+            font-family:"UTM Futura Extra";
+            border: 6px solid burlywood;
+            margin-top: -5px;
+            display: flex;
+            /*justify-content: center;*/
+            align-items: center;
+            min-height: 180px;
+            /*background-color: #07252d;*/
+            background-color: black;
+            margin-bottom: 5px;
+        }
+
+        .c {margin-top: -30px;
+            /*font-weight: bold;*/
+            position: relative;
+            font-size: 60px;
+            letter-spacing: 15px;
+            color: #0e3742;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+            line-height: 0.70em;
+            outline: none;
+            animation: animate 7s linear infinite;
+        }
+
+        @keyframes animate {
+            0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%
+            {
+                color: #0e3742;
+                text-shadow: none;
+            }
+            18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%
+            {
+                color: #fff;
+                text-shadow: 0 0 10px #03bcf4,
+                0 0 20px #03bcf4,
+                0 0 40px #03bcf4,
+                0 0 80px #03bcf4,
+                0 0 160px #03bcf4;
+            }
+
+        }
+
+        #is {
+            background-color: red;
+            animation-name: keyframes1;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes keyframes1 {
+            0% {
+                background-color: #f2f2f2;
+            }
+            25% {
+                background-color: red;
+            }
+            50% {
+                background-color: blue;
+            }
+            75% {
+                background-color: yellow;
+            }
+            100% {
+                background-color: lemonchiffon;
+            }
+        }
+
+        label {
+            font-size: 16px;
+            font-family: "UTM Impact";
+            text-shadow: 0em 0em 0em #ffffff,
+            0.08em 0.08em 0em #aaaaaa;
+            color: slateblue;
+            /*font-weight: bold;*/
+        }
+
+        /*h3 {*/
+        /*    text-align: center;*/
+        /*    padding: 10px 0 10px 20px;*/
+        /*}*/
+
+        footer {
+            margin: 10px 0;
+        }
+
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            border: 1px solid white;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .test {
+            width: 100%;
+            padding: 12px 0px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+
+        }
+
+        input[type=text], input[type=email] {
+            width: 100%;
+            padding: 12px 0px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=date], input[type=email] {
+            width: 100%;
+            padding: 12px 0px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=number], input[type=email] {
+            width: 100%;
+            padding: 12px 0px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 300px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        #form {
+            margin: auto;
+            width: 500px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            box-shadow: #CDCDCD;
+        }
+
+        /*.notify span {*/
+        /*    font-size: 15px;*/
+        /*    color: blue;*/
+        /*}*/
+        .head {
+        }
+
+        .cot31 {
+            background-color: #62FCBD;
+        }
+
+        .left {
+            background: #CDCDCD;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .left:hover {
+            overflow: scroll;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container-fluid">
+    <footer th:fragment="head">
+        <div class="row bk hn co o">
+            <div col-sm-12 col-lg-12 col-md-12>
+                <!--        <marquee direction="right">-->
+
+                <!--        </marquee>-->
+                <p class="bk hn co c" contenteditable="true"><i style="font-size: 90px" class="fa-brands fa-fantasy-flight-games"></i>Furama Resort<i style="font-size: 50px" class="fa-brands fa-angellist"></i></p>
+
+            </div>
+        </div>
+        <!--    hàng 1-->
+        <div id="is" style="background-color: #f2f2f2; border-top: 5px solid burlywood" class="row">
+            <div class="col-sm-3 col-lg-3 col-md-3 head">
+                <img src="https://www.furama.com/images/LOGOFurama_4C_Normal.png" width="260px" height="65px"
+                     style="margin-top: 25px;margin-left: 40px">
+            </div>
+            <div class="col-sm-3 col-lg-3 col-md-3 head">
+            </div>
+            <div class="col-sm-3 col-lg-3 col-md-3 head ">
+                <p style="margin-top: 20px"><i class="fa-solid fa-location-dot"></i>
+                    103 - 105 Vo Nguyen Giap Street,<br>
+                    Khue My Ward, Ngu Hanh Son District,<br>
+                    Danang City, Vietnam<br>
+                </p>
+            </div>
+            <div class="col-sm-3 col-lg-3 col-md-3 head ">
+                <p style="margin-top: 20px"><i class="fa-solid fa-phone"></i>84-236-3847 333/888</p>
+                <p><i class="fa-solid fa-envelope-circle-check"></i>reservation@furamavietnam.com</p>
+            </div>
+        </div>
+        <!--    hàng 2-->
+        <div class="row" style="background-color:#58E0D0">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid mx-5">
+                    <i style="margin-top: 8px" class="fa-solid fa-house-chimney h5 mx-1"></i>
+                    <a class="navbar-brand" href="/">Home</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">Employee</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/employee">Employee list</a></li>
+                                    <li><a class="dropdown-item" href="/employee/create">Add new Employee</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">Customer</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/customer">Customer list</a></li>
+                                    <li><a class="dropdown-item" href="/customer/create">Add new Customer</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">Service</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/facility">Facility list</a></li>
+                                    <li><a class="dropdown-item" href="/facility/create">Add new Facility</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">Contract</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/contract">Contract list</a></li>
+                                    <li><a class="dropdown-item" href="/contract/create">Add new Contract</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!--                    <form class="d-flex my-2" role="search">-->
+                        <!--                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+                        <!--                        <button class="btn btn-outline-success" type="submit">-->
+                        <!--                            <i class="fa-solid fa-magnifying-glass"></i></button>-->
+                        <!--                    </form>-->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </footer>
+    <!--    hàng 3-->
+    <div class="row">
+        <div class="col-sm-2 col-lg-2 col-md-2 cot31 left">
+            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/qiag-dKL--Y"
+                    title="Furama Resort Danang, Biệt thự nghỉ dưỡng FURAMA RESORT DANANG - Ngũ Hành Sơn, Đà Nẵng"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <p>Furama Resort Đà Nẵng</p>
+            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/2b7iuDngAtg"
+                    title="Furama Villas Danang - FURAMA RESORT DANANG, VIETNAM, 5 SAO BEACH RESORT" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <p>Furama Resort Đà Nẵng</p>
+            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/PgvSSl4jm1U"
+                    title="Furama Resort Đà Nẵng" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <p>Furama Resort Đà Nẵng</p>
+            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/PgvSSl4jm1U"
+                    title="Furama Resort Đà Nẵng" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <p>Furama Resort Đà Nẵng</p>
+            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/PgvSSl4jm1U"
+                    title="Furama Resort Đà Nẵng" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <p>Furama Resort Đà Nẵng</p>
+            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/PgvSSl4jm1U"
+                    title="Furama Resort Đà Nẵng" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <p>Furama Resort Đà Nẵng</p>
+        </div>
+        <div class="col-sm-6 col-lg-6 col-md-6">
+            <div>
+                <img width="100%" height="600" id="img" onclick="changeImage()"
+                     src="https://vtr.org.vn/FileManager/Anh%20web%202019/Thang%2010/2131/furama%20resort%20(1).jpg"
+                     alt="">
+            </div>
+            <script>
+                var index = 1;
+                changeImage = function () {
+                    var imgs = ["https://vtr.org.vn/FileManager/Anh%20web%202019/Thang%2010/2131/furama%20resort%20(1).jpg",
+                        "https://gina.com.vn/wp-content/uploads/2021/10/resort-da-nang-7.jpg",
+                        "https://vtr.org.vn/FileManager/Anh%20web%202019/Thang%2010/2131/furama%20resort%20(2).jpg"];
+                    document.getElementById('img').src = imgs[index];
+                    index++;
+                    if (index == 3) {
+                        index = 0;
+                    }
+                }
+                setInterval(changeImage, 2000);
+            </script>
+        </div>
+        <div style="background-color: #f5c2c7" class="col-sm-2 col-lg-2 col-md-2">
+            <!--            hàng 8.1-->
+            <div class="row">
+                <div class="card shadow" style="width: 15rem; margin-top: 35px">
+                    <img style="height: 150px"
+                         src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Resort_Gala_Dinner_Gala_Dinner_Latern-Night-1.jpg"
+                         class="card-img-top" alt="hinh_anh/hinh 6.1.jpg">
+                    <div class="card-body">
+                        <p style="color: blue;font-size: 20px" class="card-text">Đại tiệc</p>
+                    </div>
+                </div>
+            </div>
+            <!--            hàng 8.2-->
+            <div style="margin-top: 40px" class="row">
+                <div class="card shadow" style="width: 15rem;">
+                    <img style="height: 150px" src="https://furamavietnam.com/wp-content/uploads/2018/10/Cham_Dance.jpg"
+                         class="card-img-top" alt="hinh_anh/hinh 6.1.jpg">
+                    <div class="card-body">
+                        <p style="color: blue;font-size: 20px" class="card-text">Lễ hội</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #f5c2c7" class="col-sm-2 col-lg-2 col-md-2">
+            <!--            hàng 8.1-->
+            <div class="row">
+                <div class="card shadow" style="width: 15rem;margin-top: 35px">
+                    <img style="height: 150px"
+                         src="http://datphongresort.com/wp-content/uploads/2020/08/Presidential-Suite-M.jpg"
+                         class="card-img-top" alt="hinh_anh/hinh 6.1.jpg">
+                    <div class="card-body">
+                        <p style="color: blue;font-size: 20px" class="card-text">Không gian riêng</p>
+                    </div>
+                </div>
+            </div>
+            <!--            hàng 8.2-->
+            <div style="margin-top: 40px" class="row">
+                <div class="card shadow" style="width: 15rem;">
+                    <img style="height: 150px"
+                         src="https://furamavietnam.com/wp-content/uploads/2018/07/Vietnam_Danang_Furama_Resort_Exterior_Beach.jpg"
+                         class="card-img-top" alt="hinh_anh/hinh 6.1.jpg">
+                    <div class="card-body">
+                        <p style="color: blue;font-size: 20px" class="card-text">Bãi biển</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!--    hàng 9-->
+    <div class="row" style="border: 2px dashed burlywood; margin-top: 20px; background-color: #f2f2f2">
+        <div class="col-sm-12 col-lg-12 col-md-12" style="margin-top: 30px">
+            <marquee direction="right">
+                <h3 style="font-family: 'UTM Impact'; color: burlywood;font-size: 35px; text-align: center">
+                    Trải nghiệm ẩm thực và giải trí
+                </h3>
+            </marquee>
+            <p style="color: burlywood;font-size: 18px;text-align: center">
+                Khu nghỉ dưỡng Furama Đà Nẵng là một khu nghỉ dưỡng 5 sao sang trọng, có uy tín và được <br>
+                xem là một trong những biểu tượng của ngành du lịch Việt Nam.
+            </p>
+
+        </div>
+
+
+    </div>
+    <!--    hàng 10-->
+    <div class="row">
+        <div class="col-sm-8 col-lg-8 col-md-8" style="margin-top: 15px">
+            <img src="https://furamavietnam.com/wp-content/uploads/2018/07/CULIRARY.jpg" width="800px" height="500px">
+        </div>
+        <div class="col-sm-4 col-lg-4 col-md-4" style="text-align: center; margin-top: 80px; margin-left: -60px">
+            <h3 style="font-family: 'UTM Impact';color: burlywood">
+                Ẩm thực
+            </h3>
+            <p style="text-align: justify">
+                Trải nghiệm ẩm thực tại Khu nghỉ có sự pha trộn độc đáo các món ăn truyền thống Việt Nam với nhiều những
+                hương vị ẩm thực châu Á, Ý và châu Âu cùng các món bò nhập khẩu thượng hạng tại đa dạng các nhà hàng,
+                quầy bar đẳng cấp được bao quanh bởi một khu vườn nhiệt đới hay hướng mình ra biển, đón những hơi thở
+                mát mẻ thổi về từ biển đông.
+
+                Nhà hàng chính Café Indochine nổi tiếng với tiệc Buffet Chợ Hải Sản hay những bữa trưa cơm mâm đồng đậm
+                chất Việt, Don Cipriani’s tinh túy ẩm thực Ý là những lựa chọn không thể bỏ qua khi ghé thăm Furama
+                Resort Đà Nẵng. Nhà hàng Danaksara mới khai trương cạnh hồ bơi trung tâm quần thể 108 căn Biệt thự
+                Furama Villas Đà Nẵng cũng dần trở thành chốn ưa thích của nhiều kẻ sành ăn.
+            </p>
+
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-8 col-lg-8 col-md-8" style="margin-top: 15px">
+            <img src="https://furamavietnam.com/wp-content/uploads/2018/10/02.-ICP-ICP_Furama_Danang_-Ball-Room-4.jpg"
+                 width="800px" height="500px">
+        </div>
+        <div class="col-sm-4 col-lg-4 col-md-4" style="text-align: center; margin-top: 80px; margin-left: -60px">
+            <h3 style="font-family: 'UTM Impact';color: burlywood">
+                Họp & Sự kiện
+            </h3>
+            <p style="text-align: justify">
+                Cung điện Hội nghị Quốc tế được trang bị tốt với các phòng khiêu vũ có thể chứa đến 1.000 người, với 10
+                phòng chức năng khác cho 50 đến 300 người mỗi phòng. Một loạt các bữa tiệc theo chủ đề văn hóa trên bãi
+                biển hoặc xung quanh đầm phá, trong phòng khiêu vũ hoặc bên ngoài khu nghỉ mát, với sự xuất hiện bất ngờ
+                của các VIP từ Trực thăng đáp xuống Sân bay trực thăng riêng của khu nghỉ dưỡng, cộng với các hoạt động
+                xây dựng nhóm thú vị và thể thao dưới nước, hai 18- các sân gôn lỗ gần đó, cũng như dịch vụ chăm sóc sức
+                khỏe và sắc đẹp khiến Furama Đà Nẵng trở thành địa điểm lý tưởng cho các nhóm MICE dành cho các nhà
+                hoạch định hội nghị và khuyến khích.
+            </p>
+
+        </div>
+
+    </div>
+    <div class="row" style="margin-top: 20px; border: 3px solid darkgreen">
+        <div class="col-sm-1 col-lg-1 col-md-1">
+
+        </div>
+        <div class="col-sm- col-lg-3 col-md-3">
+            <p style="text-align: justify; font-family: 'UTM Impact';color: burlywood;font-size: 30px; margin-top: 30px">
+                KHU NGHỈ DƯỠNG ĐẲNG CẤP THẾ GIỚI, FURAMA ĐÀ NẴNG, NỔI TIẾNG LÀ KHU NGHỈ DƯỠNG ẨM THỰC TẠI VIỆT NAM.
+            </p>
+
+        </div>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <img src="https://furamavietnam.com/wp-content/uploads/2018/07/Vietnam_Danang_Furama_Resort_Exterior_Beach.jpg"
+                 width="440px" height="300px">
+
+        </div>
+        <div class="col-sm-3 col-lg-3 col-md-3">
+            <p style="text-align: justify; margin-top: 10px">
+                Hướng ra bãi biển Đà Nẵng trải dài cát trắng, Furama Resort Đà Nẵng là cửa ngõ đến với 3 di sản văn hoá
+                thế giới: Hội An (20 phút), Mỹ Sơn (90 phút) và Huế (2 tiếng. 196 phòng hạng sang cùng với 70 căn biệt
+                thự từ hai đến bốn phòng ngủ có hồ bơi riêng đều được trang trí trang nhã, theo phong cách thiết kế
+                truyền thống của Việt Nam và kiến trúc thuộc địa của Pháp, biến Furama thành khu nghỉ dưỡng danh giá
+                nhất tại Việt Nam – vinh dự được đón tiếp nhiều người nổi tiếng, giới hoàng gia, chính khách, ngôi sao
+                điện ảnh và các nhà lãnh đạo kinh doanh quốc tế.
+            </p>
+        </div>
+        <div class="col-sm-1 col-lg-1 col-md-1">
+
+        </div>
+
+
+    </div>
+
+    <!--    hàng 9-->
+    <div style="background-color: #58E0D0" class="row text-center ">
+        <div class="col-sm-12 col-lg-12 col-md-12">
+            <p class="text-light p-3">&copy;FURAMA - officially operated in 1997.</p>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

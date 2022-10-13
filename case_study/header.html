@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        .o {
+            font-family: "UTM Futura Extra";
+            /*border: 6px solid burlywood;*/
+            margin-top: -5px;
+            display: flex;
+            /*justify-content: center;*/
+            align-items: center;
+            min-height: 140px;
+            /*background-color: #07252d;*/
+            background-color: black;
+        }
+
+        .c {
+            margin-top: -30px;
+            /*font-weight: bold;*/
+            position: relative;
+            font-size: 60px;
+            letter-spacing: 15px;
+            color: #0e3742;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+            line-height: 0.70em;
+            outline: none;
+            animation: animate 7s linear infinite;
+        }
+
+        @keyframes animate {
+            0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+                color: #0e3742;
+                text-shadow: none;
+            }
+            18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+                color: #fff;
+                text-shadow: 0 0 10px #03bcf4,
+                0 0 20px #03bcf4,
+                0 0 40px #03bcf4,
+                0 0 80px #03bcf4,
+                0 0 160px #03bcf4;
+            }
+
+        }
+
+        #is {
+            background-color: red;
+            animation-name: keyframes1;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes keyframes1 {
+            0% {
+                background-color: #f2f2f2;
+            }
+            100% {
+                background-color: lemonchiffon;
+            }
+        }
+
+        label {
+            font-size: 16px;
+            font-family: "UTM Impact";
+            text-shadow: 0em 0em 0em #ffffff,
+            0.08em 0.08em 0em #aaaaaa;
+            color: slateblue;
+            /*font-weight: bold;*/
+        }
+
+        footer {
+            margin: 10px 0;
+        }
+
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            border: 1px solid white;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .test {
+            width: 100%;
+            padding: 12px 0px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+
+        }
+
+        input[type=text], input[type=email] {
+            width: 100%;
+            padding: 12px 0px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=date], input[type=email] {
+            width: 100%;
+            padding: 12px 0px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=number], input[type=email] {
+            width: 100%;
+            padding: 12px 0px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 300px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        #form {
+            margin: auto;
+            width: 500px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            box-shadow: #CDCDCD;
+        }
+        .left {
+            background: #CDCDCD;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .left:hover {
+            overflow: scroll;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+        a{
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <!--    hang 1-->
+    <div class="row bk hn co o">
+        <div col-sm-12 col-lg-12 col-md-12>
+            <p class="bk hn co c" contenteditable="true"><i style="font-size: 60px" class="fa-brands fa-fantasy-flight-games"></i>Furama
+                Resort<i style="font-size: 50px" class="fa-brands fa-angellist"></i></p>
+        </div>
+    </div>
+    <!--    hàng 2-->
+    <div class="row" style="background-color:orange; text-align: center; height: 80px">
+        <div style="margin: auto" class="col-sm-5 col-lg-5 col-md-5">
+            <i style="color: white; font-size: 40px" class="fa-sharp fa-solid fa-plane"></i>
+            <a style="font-size: 40px; color:white; font-family: 'UTM Impact'">STAR</a><a style="font-size: 40px; color: black; font-family: 'UTM Impact'">TRAVELS</a>
+        </div>
+        <div style="margin: auto; color: white" class="col-sm-7 col-lg-7 col-md-7">
+            <nav class="navbar navbar-expand-lg ">
+                <div style="color: white;font-weight: bold" class="container-fluid mx-5">
+                    <i style="margin-top: 8px" class="fa-solid fa-house-chimney h5 mx-1"></i>
+                    <a style="color: white" class="navbar-brand" href="http://localhost:63342/case_study/home.html?_ijt=so04q940rcv7f26frtnj2ie3lv">HOME</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">EMPLOYEE</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/employee">Employee list</a></li>
+                                    <li><a class="dropdown-item" href="/employee/create">Add new Employee</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">CUSTOMER</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/customer">Customer list</a></li>
+                                    <li><a class="dropdown-item" href="/customer/create">Add new Customer</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">SERVICE</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="http://localhost:63342/case_study/list.html?_ijt=uim2s8d9pmpe88h6ru7i5u6ub5">Facility list</a></li>
+                                    <li><a class="dropdown-item" href="/facility/create">Add new Facility</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">CONTRACT</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/contract">Contract list</a></li>
+                                    <li><a class="dropdown-item" href="/contract/create">Add new Contract</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+
+    </div>
+    </footer>
+    <div class="row">
+        <div style="background-color: orange; font-family: 'Times New Roman';border-bottom: 10px solid burlywood;" class="col-sm-12 col-lg-12 col-md-12">
+            <h2>
+                <marquee>
+                    FURAMA RESORT XIN KÍNH CHÀO QUÝ KHÁCH!
+                </marquee>
+            </h2>
+        </div>
+    </div>
+
+</body>
+</html>
