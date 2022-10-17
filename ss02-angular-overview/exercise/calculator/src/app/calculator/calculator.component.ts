@@ -6,36 +6,27 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
-
-  numberFirst: number | undefined;
-  numberSecond: number | undefined;
-  resultNum: any;
-
-  constructor() {
-  }
+  number1: number ;
+  number2: number ;
+  result: number;
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  sumNumber(): void {
-    this.resultNum = Number(this.numberFirst) + Number(this.numberSecond);
+  sum2Number(): void {
+    this.result = Number(this.number1) + Number(this.number2);
   }
 
-  minusNumber(): void {
-    this.resultNum = Number(this.numberFirst) - Number(this.numberSecond);
+  tru2Number() {
+    this.result = Number(this.number1) - Number(this.number2);
   }
 
-
-  multiplication(): void {
-    this.resultNum = Number(this.numberFirst) * Number(this.numberSecond);
+  nhan2Number() {
+    this.result = Number(this.number1) * Number(this.number2);
   }
 
-  division(): void {
-    // tslint:disable-next-line:triple-equals
-    if (Number(this.numberSecond) != 0) {
-      this.resultNum = Number(this.numberFirst) / Number(this.numberSecond);
-    } else {
-      this.resultNum = 'Không thể chia cho 0';
-    }
+  chia2Number() {
+    this.result = Number(this.number1) / Number(this.number2);
   }
 }

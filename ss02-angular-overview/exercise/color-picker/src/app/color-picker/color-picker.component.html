@@ -7,3 +7,9 @@
 <p >
   This is a paragraph.
 </p>
+<h2>Change Color</h2>
+
+<label>Chose Color:</label>
+<input type="color" [(ngModel)]="color">
+<p [style.background-color]="color">Huan nguyen</p>
+<h1>{{color}}</h1>
