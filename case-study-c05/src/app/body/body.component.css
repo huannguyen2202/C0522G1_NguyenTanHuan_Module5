@@ -1,0 +1,9 @@
+.left {
+  background: #CDCDCD;
+  height: 600px;
+  overflow: hidden;
+}
+
+.left:hover {
+  overflow: scroll;
+}
