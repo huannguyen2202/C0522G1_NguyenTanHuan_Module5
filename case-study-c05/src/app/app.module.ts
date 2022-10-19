@@ -9,6 +9,8 @@ import { BodyComponent } from './body/body.component';
 import { ListFacilityComponent } from './list-facility/list-facility.component';
 import { EditFacilityComponent } from './edit-facility/edit-facility.component';
 import { CreateFacilityComponent } from './create-facility/create-facility.component';
+import { ListCustomerComponent } from './list-customer/list-customer.component';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { CreateFacilityComponent } from './create-facility/create-facility.compo
     BodyComponent,
     ListFacilityComponent,
     EditFacilityComponent,
-    CreateFacilityComponent
+    CreateFacilityComponent,
+    ListCustomerComponent,
+    EditCustomerComponent
   ],
   imports: [
     BrowserModule
