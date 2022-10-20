@@ -1,0 +1,17 @@
+<h4 style="margin-left: 46%">Login Form</h4>
+<form class="col-6 m-auto" [formGroup]="loginForm">
+  <p>
+    <input formControlName="gmail" type="text"  class="form-control">
+    <em *ngIf="loginForm.controls.gmail.hasError('email')" class="text-danger" >
+      Vui lòng nhập đúng định dạng (ex: abc@example.com)
+    </em>
+  </p>
+  <p>
+    <input formControlName="password" type="password" name="u" class="form-control">
+    <em *ngIf="loginForm.controls.password.hasError('minlength')" class="text-danger">
+      Mật khẩu ít nhất 6 ký tự!
+    </em>
+  </p>
+  <button type="button" class="btn-danger" style="margin-left: 46%">Login</button>
+</form>
+<p style="margin-left: 43%">{{loginForm.value|json}}</p>

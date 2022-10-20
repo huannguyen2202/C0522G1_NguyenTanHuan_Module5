@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h2>User Registration</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 m-lg-auto" id="form" [formGroup]="userFormGroup">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control " id="email" formControlName="email">
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="userFormGroup.controls.email.hasError('required')
+            && userFormGroup.controls.email.dirty"> Khong duoc de trong!
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="userFormGroup.controls.email.hasError('email')
+            && userFormGroup.controls.email.dirty"> Nhap dung dinh dang email!
+      </div>
+      <div class="mb-3" formGroupName="passwordGroup">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="text" class="form-control" name="password" id="password" formControlName="password">
+        </div>
+        <div class="mb-3 text-danger"
+             *ngIf="userFormGroup.controls.password.hasError('minLength')
+            && userFormGroup.controls.email.dirty"> Do dai phai lon hon 5!
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="text" class="form-control" name="confirmPassword" id="confirmPassword"
+                 formControlName="confirmPassword">
+        </div>
+        <div class="mb-3 text-danger"
+             *ngIf="userFormGroup.controls.confirmPassword.hasError('notSame')
+            && userFormGroup.controls.email.dirty"> Do dai phai lon hon 5!
+        </div>
+        <div class="mb-3 text-danger"
+             *ngIf="userFormGroup.controls.passwordGroup.hasError('minLength')
+            && userFormGroup.controls.email.dirty"> Kiem tra lai password!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <select class="form-select" id="country" formControlName="country">
+          <option>Viet Nam</option>
+          <option>Canada</option>
+          <option>USA</option>
+        </select>
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="userFormGroup.controls.country.hasError('required')
+            && userFormGroup.controls.country.dirty"> Khong duoc de trong!
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="date" class="form-control" id="age" formControlName="age">
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="userFormGroup.controls.age.hasError('invalid18')
+            && userFormGroup.controls.country.dirty"> Tuoi phai lon hon bang 18 tuoi!
+      </div>
+      <div class="mb-3">
+        <label>Geneder </label><br>
+        <input type="radio" value="male" name="gender" formControlName="gender"> Male
+        <input type="radio" value="female" name="gender" formControlName="gender"> Female
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="userFormGroup.controls.age.hasError('required')
+            && userFormGroup.controls.country.dirty"> Khong duoc de trong!
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone">
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="userFormGroup.controls.age.hasError('required')
+            && userFormGroup.controls.country.dirty"> Khong duoc de trong!
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="userFormGroup.controls.age.hasError('pattern')
+            && userFormGroup.controls.country.dirty"> So dien thoai phai co dinh dang +84 + 9-10 so !!
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="userFormGroup.controls.age.hasError('')
+            && userFormGroup.controls.country.dirty"> Tuoi phai lon hon bang 18 tuoi!
+      </div>
+      <button type="button" class="btn btn-primary"
+              (click)="getValueUser()"
+      [disabled]="userFormGroup.invalid">Submit
+      </button>
+    </div>
+  </div>
+</div>
