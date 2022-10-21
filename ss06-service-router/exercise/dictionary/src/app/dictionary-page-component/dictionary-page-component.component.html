@@ -1,0 +1,17 @@
+<h1>Từ điển</h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Từ khóa</th>
+    <th>Thông tin chi tiết</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let word of dictionaryList; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{word.word}}</td>
+    <button type="button" class="btn btn-info" routerLink="/detail/{{word.word}}">Chi tiết</button>
+  </tr>
+  </tbody>
+</table>
