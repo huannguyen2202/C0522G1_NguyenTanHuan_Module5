@@ -1,0 +1,53 @@
+<h1>Tạo sản phẩm mới</h1>
+<a routerLink="">Quay Lại Trang Danh Sách</a>
+<form [formGroup]="productForm" >
+  <table>
+    <tr>
+      <td>Mã sản phẩm:</td>
+      <td><input type="number" formControlName="id"></td>
+    </tr>
+    <div class="mb3 text-danger"
+         *ngIf="productForm.controls.id.hasError('required')
+           && productForm.controls.id.dirty">
+      Trường Tên Không Được Để Trống !!!
+    </div>
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <div class="mb3 text-danger"
+         *ngIf="productForm.controls.name.hasError('required')
+           && productForm.controls.name.dirty">
+      Trường Tên Không Được Để Trống !!!
+    </div>
+    <tr>
+      <td>Giá sản phẩm</td>
+      <td><input type="number" formControlName="price"></td>
+    </tr>
+    <div class="mb3 text-danger"
+         *ngIf="productForm.controls.price.hasError('required')
+           && productForm.controls.price.dirty">
+      Trường Giá Không Được Để Trống !!!
+    </div>
+    <tr>
+      <td>Mô tả về sản phẩm</td>
+      <td><input type="text" formControlName="description"></td>
+    </tr>
+    <div class="mb3 text-danger"
+         *ngIf="productForm.controls.description.hasError('required')
+           && productForm.controls.description.dirty">
+      Trường Mô Tả Không Được Để Trống !!!
+    </div>
+    <tr>
+      <td>Loại Sản Phẩm</td>
+      <td><select formControl="category">
+        <option value="" class="option">Loại sản phẩm</option>
+        <option  *ngFor="let temp of categoryList" [ngValue]="temp.categoryName">{{temp.categoryName}}</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button [disabled]="productForm.invalid" (click)="click()">Tạo mới</button></td>
+    </tr>
+  </table>
+</form>

@@ -1,0 +1,44 @@
+<h3 style="color: blue;font-family:Algerian;font-size: 40px; text-align: center; text-shadow: 0em 0em 0em #ffffff,
+                0.08em 0.08em 0em #aaaaaa">Product List</h3><br>
+<a routerLink="/create-product">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+  </svg>
+  Thêm Mới Sản Phẩm
+</a>
+<div *ngIf="productList && categoryList !=null">
+<table id="customers">
+  <thead>
+  <tr>
+        <td>STT</td>
+        <td>Tên</td>
+        <td>Giá</td>
+        <td>Mô tả</td>
+        <td>Loại Sa Phẩm</td>
+        <td>Chỉnh Sửa</td>
+        <td>Xóa</td>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList; index as i" class="text-center">
+      <td>{{i + 1}}</td>
+      <td><a routerLink="/detail/{{product.id}}">{{product.name}}</a></td>
+      <td>{{product.price}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.category.categoryName}}</td>
+      <td><a routerLink="/update/{{product.id}}">
+        <button class="btn btn-primary btn-outline-secondary btn-sm shadow">
+          <span class="fa-regular fa-pen-to-square text-light h6 m-auto px-2"></span>
+        </button>
+      </a></td>
+      <td><a routerLink="/delete/{{product.id}}">
+        <button
+          class="btn btn-danger btn-outline-secondary btn-sm shadow" data-bs-toggle="modal"
+          data-bs-target="#deleteCustomer">
+          <span class="fa-solid fa-trash-can text-light h6 m-auto px-2"></span>
+        </button>
+      </a></td>
+    </tr>
+  </tbody>
+</table>
+</div>

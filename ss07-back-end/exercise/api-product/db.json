@@ -1,0 +1,58 @@
+{
+  "productList": [
+    {
+      "id": 1,
+      "name": "Iphone",
+      "price": 12000,
+      "description": "Mới",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Đồ dùng cá nhân"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Oto",
+      "price": 12000,
+      "description": "Mới",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Đồ dùng cá nhân"
+      }
+    },
+    {
+      "id": 3,
+      "name": "máy tính",
+      "price": 12234,
+      "description": "củ",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Đồ dùng cá nhân"
+      }
+    },
+    {
+      "id": 4,
+      "name": "siêu xe",
+      "price": 1214343,
+      "description": "mới",
+      "category": {
+        "categoryId": 2,
+        "categoryName": "Đồ dùng gia đình"
+      }
+    }
+  ],
+  "categoryList": [
+    {
+      "categoryId": 1,
+      "categoryName": "Đồ dùng cá nhân"
+    },
+    {
+      "categoryId": 2,
+      "categoryName": "Đồ dùng gia đình"
+    },
+    {
+      "categoryId": 3,
+      "categoryName": "Đồ dùng công nghiệp"
+    }
+  ]
+}
