@@ -1,200 +1,84 @@
-<div class="container-fluid">
-  <table id="facilityTable">
-    <thead>
-    <tr>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>
-        <div class="row">
-          <div class="col-sm-2 col-lg-2 col-md-2">
-          </div>
-          <div class="col-sm-8 col-lg-8 col-md-8">
-            <div class="card mb-3 shadow" style="width: 1100px">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://furamavietnam.com/wp-content/uploads/2018/10/Cham_Dance.jpg"
-                       class="img-fluid rounded-start" width="800px">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a little bit
-                      longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                  </div>
-                  <div style="margin-top: 30px"
-                       class="card-body">
-                    <a href="#" class="card-link btn btn-primary">UPDATE</a>
-                    <a style="margin-left: 50px" href="#" role="button"
-                       class="card-link btn btn-danger">DELETE</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-2 col-lg-2 col-md-2">
-          </div>
-        </div>
+<h3 style="color: blue;font-family:Algerian;font-size: 40px; text-align: center; text-shadow: 0em 0em 0em #ffffff,
+                0.08em 0.08em 0em #aaaaaa">Facility List</h3><br>
+<p>
+    <a>
+        <span class="fa-solid fa-file-circle-plus h5 my-auto me-1"></span>
+        Add new facility
+    </a>
+</p>
+<form class="d-flex my-2" role="search" action="" method="get" style="margin-left: 900px">
+  <input style="background-color: #f2f2f2; border: 1px solid olivedrab" class="form-control me-2 shadow" type="search" placeholder="Input search Name" aria-label="Search"
+         name="name">
+  <input style="background-color: #f2f2f2; border: 1px solid olivedrab" class="form-control me-2 shadow" type="search" placeholder="Input search Phone" aria-label="Search"
+         name="phone">
+  <input style="background-color: #f2f2f2; border: 1px solid olivedrab" class="form-control me-2 shadow" type="search" placeholder="Input search Address" aria-label="Search"
+         name="address">
+  <button style="background-color: #45a049" class="btn btn-outline-success shadow" type="submit" name="action" value="search">
+    <i class="fa-solid fa-magnifying-glass text-light"></i></button>
+</form>
 
+<table id="customers">
+  <thead>
+  <tr>
+        <th>Serial</th>
+        <th>Name</th>
+        <th>Cost</th>
+        <th>Max people</th>
+        <th>Standard room</th>
+        <th>Floor</th>
+        <th>Type of rent</th>
+        <th>Type of facility</th>
+        <th>Update</th>
+        <th>Delete</th>
+        <th>View</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let facility of facility; index as i">
+      <td>{{i + 1}}</td>
+      <td>{{facility.facilityName}}</td>
+      <td>{{facility.facilityCost}}</td>
+      <td>{{facility.maxPeople}}</td>
+      <td>{{facility.standardRoom}}</td>
+      <td>{{facility.numberOfFloors}}</td>
+      <td>{{facility.rentType}}</td>
+      <td>{{facility.facilityType}}</td>
+<!--      <td class="text-center">-->
+<!--        <a>-->
+<!--          <span class="text-warning"><i class="fa-solid fa-pen-to-square"></i></span>-->
+<!--        </a>-->
+<!--      </td>-->
+<!--      <td class="text-center">-->
+<!--        <a data-bs-toggle="modal" data-bs-target="#deleteFacility">-->
+<!--          <span class="text-danger"><i class="fa-solid fa-trash-can"></i></span>-->
+<!--        </a>-->
+<!--      </td>-->
+<!--      <td class="text-center">-->
+<!--        <a>-->
+<!--          <span class="text-success"><i class="fa-solid fa-eye"></i></span>-->
+<!--        </a>-->
+<!--      </td>-->
+      <td>
+        <a>
+          <button class="btn btn-primary btn-outline-secondary btn-sm shadow">
+            <span class="fa-regular fa-pen-to-square text-light h6 m-auto px-2"></span>
+          </button>
+        </a>
+      </td>
+      <td>
+        <button
+                class="btn btn-danger btn-outline-secondary btn-sm shadow" data-bs-toggle="modal"
+                data-bs-target="#deleteCustomer">
+          <span class="fa-solid fa-trash-can text-light h6 m-auto px-2"></span>
+        </button>
+      </td>
+      <td>
+        <a>
+          <button style="background-color: orangered" class="btn btn-outline-secondary btn-sm shadow">
+            <span class="fa-solid fa-users-viewfinder text-light h6 m-auto px-2"></span>
+          </button>
+        </a>
       </td>
     </tr>
-    <tr>
-      <td>
-        <div class="row">
-          <div class="col-sm-2 col-lg-2 col-md-2">
-          </div>
-          <div class="col-sm-8 col-lg-8 col-md-8">
-            <div class="card mb-3 shadow" style="width: 1100px">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://furamavietnam.com/wp-content/uploads/2018/10/Cham_Dance.jpg"
-                       class="img-fluid rounded-start" width="800px">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a little bit
-                      longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                  </div>
-                  <div style="margin-top: 30px"
-                       class="card-body">
-                    <a href="#" class="card-link btn btn-primary">UPDATE</a>
-                    <a style="margin-left: 50px" href="#" role="button"
-                       class="card-link btn btn-danger">DELETE</a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-sm-2 col-lg-2 col-md-2">
-          </div>
-        </div>
-
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="row">
-          <div class="col-sm-2 col-lg-2 col-md-2">
-          </div>
-          <div class="col-sm-8 col-lg-8 col-md-8">
-            <div class="card mb-3 shadow" style="width: 1100px">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://furamavietnam.com/wp-content/uploads/2018/10/Cham_Dance.jpg"
-                       class="img-fluid rounded-start" width="800px">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a little bit
-                      longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                  </div>
-                  <div style="margin-top: 30px"
-                       class="card-body">
-                    <a href="#" class="card-link btn btn-primary">UPDATE</a>
-                    <a style="margin-left: 50px" href="#" role="button"
-                       class="card-link btn btn-danger">DELETE</a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-sm-2 col-lg-2 col-md-2">
-          </div>
-        </div>
-
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="row">
-          <div class="col-sm-2 col-lg-2 col-md-2">
-          </div>
-          <div class="col-sm-8 col-lg-8 col-md-8">
-            <div class="card mb-3 shadow" style="width: 1100px">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://furamavietnam.com/wp-content/uploads/2018/10/Cham_Dance.jpg"
-                       class="img-fluid rounded-start" width="800px">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a little bit
-                      longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                  </div>
-                  <div style="margin-top: 30px"
-                       class="card-body">
-                    <a href="#" class="card-link btn btn-primary">UPDATE</a>
-                    <a style="margin-left: 50px" href="#" role="button"
-                       class="card-link btn btn-danger">DELETE</a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-sm-2 col-lg-2 col-md-2">
-          </div>
-        </div>
-
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="row">
-          <div class="col-sm-2 col-lg-2 col-md-2">
-          </div>
-          <div class="col-sm-8 col-lg-8 col-md-8">
-            <div class="card mb-3 shadow" style="width: 1100px">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="https://furamavietnam.com/wp-content/uploads/2018/10/Cham_Dance.jpg"
-                       class="img-fluid rounded-start" width="800px">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a little bit
-                      longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                  </div>
-                  <div style="margin-top: 30px"
-                       class="card-body">
-                    <a href="#" class="card-link btn btn-primary">UPDATE</a>
-                    <a style="margin-left: 50px" href="#" role="button"
-                       class="card-link btn btn-danger">DELETE</a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-sm-2 col-lg-2 col-md-2">
-          </div>
-        </div>
-
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+  </tbody>
+</table>
