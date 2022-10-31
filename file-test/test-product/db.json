@@ -1,0 +1,78 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "Iphone"
+    },
+    {
+      "id": 2,
+      "categoryName": "Samsung"
+    },
+    {
+      "id": 3,
+      "categoryName": "LG"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "productName": "IPhone 12",
+      "productPrice": "2400000",
+      "productDescription": "New",
+      "category": {
+        "id": 1,
+        "categoryName": "Iphone"
+      }
+    },
+    {
+      "id": 2,
+      "productName": "IPhone 11",
+      "productPrice": "1560000",
+      "productDescription": "Like new",
+      "category": {
+        "id": 2,
+        "categoryName": "Samsung"
+      }
+    },
+    {
+      "id": 3,
+      "productName": "IPhone X",
+      "productPrice": "968000",
+      "productDescription": "97%",
+      "category": {
+        "id": 3,
+        "categoryName": "LG"
+      }
+    },
+    {
+      "id": 4,
+      "productName": "IPhone 8",
+      "productPrice": "7540000",
+      "productDescription": "98%",
+      "category": {
+        "id": 1,
+        "categoryName": "Iphone"
+      }
+    },
+    {
+      "id": 5,
+      "productName": "IPhone 11 Pro",
+      "productPrice": "1895000",
+      "productDescription": "Like new",
+      "category": {
+        "id": 2,
+        "categoryName": "Samsung"
+      }
+    },
+    {
+      "productName": "iphone14",
+      "productPrice": "100000",
+      "productDescription": "new",
+      "category": {
+        "id": 1,
+        "categoryName": "Iphone"
+      },
+      "id": 6
+    }
+  ]
+}

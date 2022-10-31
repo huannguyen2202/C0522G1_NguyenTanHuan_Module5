@@ -1,0 +1,138 @@
+{
+  "khTypes": [
+    {
+      "id": 1,
+      "khTypeName": "Member"
+    },
+    {
+      "id": 2,
+      "khTypeName": "Silver"
+    },
+    {
+      "id": 3,
+      "khTypeName": "Gold"
+    },
+    {
+      "id": 4,
+      "khTypeName": "Platinium"
+    },
+    {
+      "id": 5,
+      "khTypeName": "Diamond"
+    }
+  ],
+  "khs": [
+    {
+      "id": 1,
+      "khName": "Võ Văn Tý",
+      "khBirthday": "2001-11-20",
+      "khGender": 0,
+      "khIdCard": "123456789",
+      "khPhone": "0901111111",
+      "khEmail": "cu.ty@gmail.com",
+      "khAddress": "bản LắkKonKu, Gia Lai",
+      "khType": {
+        "id": 3,
+        "khTypeName": "Gold"
+      }
+    },
+    {
+      "id": 2,
+      "khName": "Hồ Thị Thủy Lợi",
+      "khBirthday": "1997-02-14",
+      "khGender": 2,
+      "khIdCard": "132314664",
+      "khPhone": "0902222222",
+      "khEmail": "ho.thuy.loi@gmail.com",
+      "khAddress": "chùa Linh Ứng, Đà Nẵng",
+      "khType": {
+        "id": 5,
+        "khTypeName": "Diamond"
+      }
+    },
+    {
+      "id": 3,
+      "khName": "Hồ Minh Trí",
+      "khBirthday": "1998-12-12",
+      "khGender": 0,
+      "khIdCard": "132314543",
+      "khPhone": "0903333333",
+      "khEmail": "dong.mau.quy@gmail.com",
+      "khAddress": "phường Mân Đàn, TT Huế",
+      "khType": {
+        "id": 2,
+        "khTypeName": "Silver"
+      }
+    },
+    {
+      "id": 4,
+      "khName": "Hồ Thị Thủy Tiên",
+      "khBirthday": "2000-03-20",
+      "khGender": 1,
+      "khIdCard": "132222264",
+      "khPhone": "0904444444",
+      "khEmail": "tien.map.mo@gmail.com",
+      "khAddress": "huyện Núi Thành, Quảng Nam",
+      "khType": {
+        "id": 3,
+        "khTypeName": "Gold"
+      }
+    },
+    {
+      "id": 5,
+      "khName": "Đặng Ngọc Huy",
+      "khBirthday": "1998-10-20",
+      "khGender": 2,
+      "khIdCard": "132316358",
+      "khPhone": "0905555555",
+      "khEmail": "huy3D@gmail.com",
+      "khAddress": "chợ Miếu Bông, Quảng Nam",
+      "khType": {
+        "id": 1,
+        "khTypeName": "Member"
+      }
+    },
+    {
+      "id": 6,
+      "khName": "Huynh Văn Nam",
+      "khBirthday": "1993-07-26",
+      "khGender": 2,
+      "khIdCard": "155515664",
+      "khPhone": "0906666666",
+      "khEmail": "ngoc.huyen@gmail.com",
+      "khAddress": "núi Thần Tài, Quảng Nam",
+      "khType": {
+        "id": 5,
+        "khTypeName": "Diamond"
+      }
+    },
+    {
+      "khName": "Hồ Bảo An",
+      "khBirthday": "1993-01-02",
+      "khGender": 2,
+      "khIdCard": "123445664",
+      "khPhone": "0907777777",
+      "khEmail": "an.dau.khat@gmail.com",
+      "khAddress": "bản LắkkKonKu, Đắk Lắk",
+      "khType": {
+        "id": 5,
+        "khTypeName": "Diamond"
+      },
+      "id": 7
+    },
+    {
+      "customerName": "Huan Nguyen",
+      "customerBirthday": "2004-12-22",
+      "customerGender": 0,
+      "customerIdCard": "206265470",
+      "customerPhone": "0908040043",
+      "customerEmail": "huannguyenbk97@gmail.com",
+      "customerAddress": "Duy Xuyên- Quảng Nam",
+      "customerType": {
+        "id": 4,
+        "khTypeName": "Platinium"
+      },
+      "id": 8
+    }
+  ]
+}

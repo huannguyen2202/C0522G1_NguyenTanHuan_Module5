@@ -4,6 +4,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {BodyComponent} from './body/body.component';
 import {ListCustomerComponent} from './list-customer/list-customer.component';
 import {CreateCustomerComponent} from './create-customer/create-customer.component';
+import {ListContractComponent} from './list-contract/list-contract.component';
+import {CreateContractComponent} from './create-contract/create-contract.component';
 const routes: Routes = [{
   path: '',
   component: BodyComponent
@@ -13,6 +15,12 @@ const routes: Routes = [{
 }, {
   path: 'customer/create',
   component: CreateCustomerComponent
+}, {
+  path: 'contract',
+  component: ListContractComponent
+}, {
+  path: 'contract/create',
+  component: CreateContractComponent
 }];
 
 

@@ -1,0 +1,149 @@
+<div class="mx-5 px-5 pt-3 pb-5">
+  <h2 class="text-center fw-bold text-light">THÊM MỚI KHÁCH HÀNG</h2>
+
+  <p class="text-center">
+    <a routerLink=""><i class="fa-solid fa-backward"></i> Quay lại trang danh sách khách hàng</a>
+  </p>
+
+  <div class="d-flex justify-content-center">
+    <form class="w-50 border border-2 border-success p-3 rounded formCSS" novalidate="novalidate"
+          [formGroup]="productFormGroup" (ngSubmit)="submit()">
+      <div class="form-group">
+        <label for="name" class="h6">Tên khách hàng:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="productFormGroup.controls.productName.hasError('required') &&
+                      productFormGroup.controls.productName.touched">
+          Tên khách hàng không được để trống!
+        </div>
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="customerFormGroup.controls.customerName.hasError('invalidName') &&-->
+<!--                      customerFormGroup.controls.customerName.touched">-->
+<!--          Tên khách hàng phải viết hoa mỗi chữ cái đầu và không đươch chứa số!-->
+<!--        </div>-->
+        <div class="input-group">
+          <input type="text" id="name" class="form-control" placeholder="Nhập tên san pham.."
+                 formControlName="productName"/>
+          <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="productPrice" class="h6">gia san pham:</label>
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="customerFormGroup.controls.customerBirthday.hasError('invalid18_80') &&-->
+<!--                      customerFormGroup.controls.customerBirthday.touched">-->
+<!--          Tuổi khách hàng phải từ 18-80!-->
+<!--        </div>-->
+        <input type="text" id="productPrice" class="form-control" formControlName="productPrice"
+               [min]="minAge" [max]="maxAge"/>
+      </div>
+
+<!--      <div class="mt-3 form-group">-->
+<!--        <label class="h6">Giới tính:</label>-->
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="customerFormGroup.controls.customerGender.hasError('required') &&-->
+<!--                      customerFormGroup.controls.customerGender.touched">-->
+<!--          Vui lòng chọn giới tính!-->
+<!--        </div>-->
+<!--        <div class="d-flex">-->
+<!--          <label class="d-block me-4">-->
+<!--            <input class="form-check-input" type="radio" id="male" [value]="0"-->
+<!--                   formControlName="customerGender"/> Nam-->
+<!--            <i class="fa-solid fa-mars"></i>-->
+<!--          </label>-->
+
+<!--          <label class="d-block me-4">-->
+<!--            <input class="form-check-input" type="radio" id="female" [value]="1"-->
+<!--                   formControlName="customerGender"/> Nữ-->
+<!--            <i class="fa-solid fa-venus"></i>-->
+<!--          </label>-->
+
+<!--          <label class="d-block">-->
+<!--            <input class="form-check-input" type="radio" id="ljbt" [value]="2"-->
+<!--                   formControlName="customerGender"/> LGBT-->
+<!--            <i class="fa-solid fa-heart"></i>-->
+<!--          </label>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="mt-3 form-group">-->
+<!--        <label for="idCard" class="h6">Số CMND/CCCD:</label>-->
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="customerFormGroup.controls.customerIdCard.hasError('required') &&-->
+<!--                      customerFormGroup.controls.customerIdCard.touched">-->
+<!--          Số CMND/CCCD không được để trống!-->
+<!--        </div>-->
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="customerFormGroup.controls.customerIdCard.hasError('pattern') &&-->
+<!--                      customerFormGroup.controls.customerIdCard.touched">-->
+<!--          CMND/CCCD phải đúng định dạng XXXXXXXXX hoặc XXXXXXXXXXXX (X là số 0-9)!-->
+<!--        </div>-->
+<!--        <div class="input-group">-->
+<!--          <input type="text" id="idCard" class="form-control" placeholder="Nhập số CMND/CCCD.."-->
+<!--                 formControlName="customerIdCard"/>-->
+<!--          <span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="mt-3 form-group">-->
+<!--        <label for="phone" class="h6">Số điện thoại:</label>-->
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="customerFormGroup.controls.customerPhone.hasError('required') &&-->
+<!--                      customerFormGroup.controls.customerPhone.touched">-->
+<!--          Số điện thoại không được để trống!-->
+<!--        </div>-->
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="customerFormGroup.controls.customerPhone.hasError('pattern') &&-->
+<!--                      customerFormGroup.controls.customerPhone.touched">-->
+<!--          Số điện thoại phải đúng định dạng 090xxxxxxx hoặc 091xxxxxxx hoặc (84)+90xxxxxxx hoặc (84)+91xxxxxxx!-->
+<!--        </div>-->
+<!--        <div class="input-group">-->
+<!--          <input type="text" id="phone" class="form-control" placeholder="Nhập SĐT.." formControlName="customerPhone"/>-->
+<!--          <span class="input-group-text"><i class="fa-solid fa-square-phone"></i></span>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <div class="mt-3 form-group">
+        <label for="productDescription" class="h6">Product Description:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="productFormGroup.controls.productDescription.hasError('required') &&
+                      productFormGroup.controls.productDescription.touched">
+          Email không được để trống!
+        </div>
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="customerFormGroup.controls.customerEmail.hasError('email') &&-->
+<!--                      customerFormGroup.controls.customerEmail.touched">-->
+<!--          Email phải đúng định dạng!-->
+<!--        </div>-->
+        <div class="input-group">
+          <input type="text" id="productDescription" class="form-control" placeholder="Nhập email.."
+                 formControlName="productDescription"/>
+          <span class="input-group-text"><i class="fa-solid fa-envelope-circle-check"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label class="h6" for="category">Loại san pham:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="productFormGroup.controls.category.hasError('required') &&
+                      productFormGroup.controls.category.touched">
+          Vui lòng chọn loại san pham!
+        </div>
+        <div class="input-group">
+          <select id="category" class="form-select" formControlName="category">
+            <option value="" disabled>Chọn loại san pham..</option>
+            <option *ngFor="let item of categoryList" [ngValue]="item">{{item.categoryName}}</option>
+          </select>
+          <span class="input-group-text"><i class="fa-solid fa-ranking-star"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 text-center">
+        <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark"
+                [disabled]="productFormGroup.invalid">
+          -- Lưu <i class="fa-solid fa-floppy-disk"></i> --
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

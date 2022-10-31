@@ -1,0 +1,192 @@
+<div class="mx-5 px-5 pt-3 pb-5">
+  <h2 style="color: blue" class="text-center fw-bold">CHỈNH SỬA KHÁCH HÀNG</h2>
+
+  <p class="text-center">
+    <a routerLink=""><i class="fa-solid fa-backward"></i> Quay lại trang danh sách khách hàng</a>
+  </p>
+
+  <div class="d-flex justify-content-center">
+    <form class="w-50 border border-2 border-success p-3 rounded formCSS" novalidate="novalidate"
+          [formGroup]="bookFormGroup" (ngSubmit)="updateBook(bookId)">
+      <div class="form-group">
+        <label for="bookCode" class="h6">Ma so so:</label>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="bookFormGroup.controls.bookCode.hasError('required') &&
+                      bookFormGroup.controls.bookCode.touched">
+          Tên khách hàng không được để trống!
+        </div>
+        <!--        <div class="alert alert-danger" role="alert"-->
+        <!--             *ngIf="khFormGroup.controls.khName.hasError('invalidName') &&-->
+        <!--                      khFormGroup.controls.khName.touched">-->
+        <!--          Tên khách hàng phải viết hoa mỗi chữ cái đầu và không đươch chứa số!-->
+        <!--        </div>-->
+        <div class="input-group">
+          <input type="text" id="bookCode" class="form-control" placeholder="Nhập ma so so.."
+                 formControlName="bookCode"/>
+          <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>
+        </div>
+      </div>
+      <div class="mt-3 form-group">
+        <label class="h6" for="customer">Ma khach hang:</label>
+        <!--        <div class="alert alert-danger" role="alert"-->
+        <!--             *ngIf="khFormGroup.controls.khType.hasError('required') &&-->
+        <!--                      khFormGroup.controls.khType.touched">-->
+        <!--          Vui lòng chọn loại khách!-->
+        <!--        </div>-->
+        <div class="input-group">
+          <select id="customer" class="form-select" formControlName="customer" [compareWith]="compareWithId">
+            <option value="" disabled>Chọn ma khach hang..</option>
+            <option *ngFor="let item of customerList" [ngValue]="item">{{item.customerCode}}</option>
+          </select>
+          <span class="input-group-text"><i class="fa-solid fa-ranking-star"></i></span>
+        </div>
+      </div>
+      <div class="mt-3 form-group">
+        <label class="h6" for="customer">Ten khach hang:</label>
+        <!--        <div class="alert alert-danger" role="alert"-->
+        <!--             *ngIf="khFormGroup.controls.khType.hasError('required') &&-->
+        <!--                      khFormGroup.controls.khType.touched">-->
+        <!--          Vui lòng chọn loại khách!-->
+        <!--        </div>-->
+        <div class="input-group">
+          <select id="customer" class="form-select" formControlName="customer" [compareWith]="compareWithId">
+            <option value="" disabled>Chọn ten khach hang..</option>
+            <option *ngFor="let item of customerList" [ngValue]="item">{{item.customerName}}</option>
+          </select>
+          <span class="input-group-text"><i class="fa-solid fa-ranking-star"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="deposit" class="h6">Ngay mo so</label>
+        <!--        <div class="alert alert-danger" role="alert"-->
+        <!--             *ngIf="khFormGroup.controls.khBirthday.hasError('invalid18_80') &&-->
+        <!--                      khFormGroup.controls.khBirthday.touched">-->
+        <!--          Tuổi khách hàng phải từ 18-80!-->
+        <!--        </div>-->
+        <input type="date" id="deposit" class="form-control" formControlName="deposit"
+               [min]="minAge" [max]="maxAge"/>
+      </div>
+
+<!--      <div class="mt-3 form-group">-->
+<!--        <label class="h6">Giới tính:</label>-->
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="khFormGroup.controls.khGender.hasError('required') &&-->
+<!--                      khFormGroup.controls.khGender.touched">-->
+<!--          Vui lòng chọn giới tính!-->
+<!--        </div>-->
+<!--        <div class="d-flex">-->
+<!--          <label class="d-block me-4">-->
+<!--            <input class="form-check-input" type="radio" id="male" [value]="0"-->
+<!--                   formControlName="khGender"/> Nam-->
+<!--            <i class="fa-solid fa-mars"></i>-->
+<!--          </label>-->
+
+<!--          <label class="d-block me-4">-->
+<!--            <input class="form-check-input" type="radio" id="female" [value]="1"-->
+<!--                   formControlName="khGender"/> Nữ-->
+<!--            <i class="fa-solid fa-venus"></i>-->
+<!--          </label>-->
+
+<!--          <label class="d-block">-->
+<!--            <input class="form-check-input" type="radio" id="ljbt" [value]="2"-->
+<!--                   formControlName="khGender"/> LGBT-->
+<!--            <i class="fa-solid fa-heart"></i>-->
+<!--          </label>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <div class="mt-3 form-group">
+        <label for="startTime" class="h6">Thoi gian bat dau gui:</label>
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="bookFormGroup.controls.startTime.hasError('required') &&-->
+<!--                      bookFormGroup.controls.startTime.touched">-->
+<!--          Số CMND/CCCD không được để trống!-->
+<!--        </div>-->
+        <!--        <div class="alert alert-danger" role="alert"-->
+        <!--             *ngIf="khFormGroup.controls.khIdCard.hasError('pattern') &&-->
+        <!--                      khFormGroup.controls.khIdCard.touched">-->
+        <!--          CMND/CCCD phải đúng định dạng XXXXXXXXX hoặc XXXXXXXXXXXX (X là số 0-9)!-->
+        <!--        </div>-->
+        <div class="input-group">
+          <input type="date" id="startTime" class="form-control" placeholder="Nhập thoi gian bat dau gui.."
+                 formControlName="startTime"/>
+          <span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="period" class="h6">Ky han:</label>
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="khFormGroup.controls.khPhone.hasError('required') &&-->
+<!--                      khFormGroup.controls.khPhone.touched">-->
+<!--          Số điện thoại không được để trống!-->
+<!--        </div>-->
+        <!--        <div class="alert alert-danger" role="alert"-->
+        <!--             *ngIf="khFormGroup.controls.khPhone.hasError('pattern') &&-->
+        <!--                      khFormGroup.controls.khPhone.touched">-->
+        <!--          Số điện thoại phải đúng định dạng 090xxxxxxx hoặc 091xxxxxxx hoặc (84)+90xxxxxxx hoặc (84)+91xxxxxxx!-->
+        <!--        </div>-->
+        <div class="input-group">
+          <input type="text" id="period" class="form-control" placeholder="Nhập ky han" formControlName="period"/>
+          <span class="input-group-text"><i class="fa-solid fa-square-phone"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="money" class="h6">So tien gui:</label>
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="khFormGroup.controls.khEmail.hasError('required') &&-->
+<!--                      khFormGroup.controls.khEmail.touched">-->
+<!--          Email không được để trống!-->
+<!--        </div>-->
+        <!--        <div class="alert alert-danger" role="alert"-->
+        <!--             *ngIf="khFormGroup.controls.khEmail.hasError('email') &&-->
+        <!--                      khFormGroup.controls.khEmail.touched">-->
+        <!--          Email phải đúng định dạng!-->
+        <!--        </div>-->
+        <div class="input-group">
+          <input type="text" id="money" class="form-control" placeholder="Nhập so tien gui.."
+                 formControlName="money"/>
+          <span class="input-group-text"><i class="fa-solid fa-envelope-circle-check"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="interest" class="h6">Lai suat:</label>
+<!--        <div class="alert alert-danger" role="alert"-->
+<!--             *ngIf="khFormGroup.controls.khAddress.hasError('required') &&-->
+<!--                      khFormGroup.controls.khAddress.touched">-->
+<!--          Địa chỉ không được để trống!-->
+<!--        </div>-->
+        <div class="input-group">
+          <input type="text" id="interest" class="form-control" placeholder="Nhập lai suat.."
+                 formControlName="interest"/>
+          <span class="input-group-text"><i class="fa-solid fa-map-location-dot"></i></span>
+        </div>
+      </div>
+      <div class="mt-3 form-group">
+        <label for="description" class="h6">Uu dai:</label>
+        <!--        <div class="alert alert-danger" role="alert"-->
+        <!--             *ngIf="khFormGroup.controls.khAddress.hasError('required') &&-->
+        <!--                      khFormGroup.controls.khAddress.touched">-->
+        <!--          Địa chỉ không được để trống!-->
+        <!--        </div>-->
+        <div class="input-group">
+          <input type="text" id="description" class="form-control" placeholder="Nhập uu dai.."
+                 formControlName="description"/>
+          <span class="input-group-text"><i class="fa-solid fa-map-location-dot"></i></span>
+        </div>
+      </div>
+
+
+
+      <div class="mt-3 text-center">
+        <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark"
+                [disabled]="bookFormGroup.invalid">
+          -- Lưu <i class="fa-solid fa-floppy-disk"></i> --
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

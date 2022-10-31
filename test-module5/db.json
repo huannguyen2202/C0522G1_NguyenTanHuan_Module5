@@ -1,0 +1,86 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "customerCode": "01",
+      "customerName": "Truong Tan Hai"
+    },
+    {
+      "id": 2,
+      "customerCode": "02",
+      "customerName": "Doan Phuoc Trung"
+    },
+    {
+      "id": 3,
+      "customerCode": "03",
+      "customerName": "Nguyen Tan Huan"
+    },
+    {
+      "id": 4,
+      "customerCode": "04",
+      "customerName": "Nguyen Tat Thanh"
+    }
+  ],
+  "books": [
+    {
+      "id": 2,
+      "bookCode": "02",
+      "customer": {
+        "id": 2,
+        "customerCode": "02",
+        "customerName": "Doan Phuoc Trung"
+      },
+      "deposit": "2001-10-20",
+      "startTime": "2001-10-20",
+      "period": "5 thang",
+      "money": "100000",
+      "interest": "8% nam",
+      "description": "ao mua"
+    },
+    {
+      "id": 3,
+      "bookCode": "03",
+      "customer": {
+        "id": 3,
+        "customerCode": "03",
+        "customerName": "Nguyen Tan Huan"
+      },
+      "deposit": "2001-09-20",
+      "startTime": "2001-09-20",
+      "period": "4 thang",
+      "money": "300000",
+      "interest": "8% nam",
+      "description": "ao mua"
+    },
+    {
+      "id": 4,
+      "bookCode": "04",
+      "customer": {
+        "id": 4,
+        "customerCode": "04",
+        "customerName": "Nguyen Tat Thanh"
+      },
+      "deposit": "2001-08-20",
+      "startTime": "2001-08-20",
+      "period": "4 thang",
+      "money": "300000",
+      "interest": "8% nam",
+      "description": "ao mua"
+    },
+    {
+      "id": 5,
+      "bookCode": "04",
+      "customer": {
+        "id": 4,
+        "customerCode": "04",
+        "customerName": "Nguyen Tat Thanh"
+      },
+      "deposit": "2001-08-20",
+      "startTime": "2001-08-20",
+      "period": "4 thang",
+      "money": "300000",
+      "interest": "8% nam",
+      "description": "ao mua"
+    }
+  ]
+}
