@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>show employee</title>
+</head>
+<body id="backGroundBody">
+<div th:replace="layout_new :: head"></div>
+<h2>Facility List</h2>
+
+<form class="d-flex my-2" role="search" action="" method="get" style="float: right">
+    <input style="background-color: #f2f2f2; border: 1px solid olivedrab" class="form-control me-1" type="search"
+           placeholder="Input Search name" aria-label="Search"
+           name="name">
+    <button style="background-color: #45a049" class="btn btn-outline-success" type="submit" name="action"
+            value="search">
+        <i class="fa-solid fa-magnifying-glass text-light"></i></button>
+</form>
+
+<h3 th:text="${success}" style="color: blue"></h3>
+<table class="table table-bordered" id="furama">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name & View</th>
+        <th>Area</th>
+        <th>Cost</th>
+        <th>Facility Name</th>
+        <th>Rent Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row,rowStat : ${facility}">
+        <td th:text="${facility.number * facility.size + rowStat.count}"></td>
+        <td><a th:href="@{/facility/view/__${row.id}__}" th:text="${row.name}"></a></td>
+        <td th:text="${row.area}"></td>
+        <td th:text="${row.cost}"></td>
+        <td th:if="${row.facilityType}" th:text="${row.facilityType.name}"></td>
+        <td th:unless="${row.facilityType}"></td>
+        <td th:if="${row.rentType}" th:text="${row.rentType.name}"></td>
+        <td th:unless="${row.rentType}"></td>
+        <td><a th:href="@{/facility/edit/__${row.id}__}"><i class="fa-solid fa-pen-to-square"></i></a></td>
+
+        <td>
+            <button th:attr="onclick=|facilityDelete('${row.id}', '${row.name}')|"
+                    class="btn btn-danger btn-outline-secondary btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#deleteFacility">
+                <span class="fa-solid fa-trash-can text-light h6 m-auto px-2"></span>
+            </button>
+            <!--            <a th:href="@{/employee/delete/__${row.id}__}"><i class="fa-solid fa-trash"></i></a>-->
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+<div style="margin-left: 46%">
+    <ul class="pagination">
+
+        <li class="page-item"><a class="page-link" th:href="@{'/facility'(page=${facility.number - 1},name=${name})}"
+                                 th:if="${facility.hasPrevious()}">Previous</a></li>
+        <li class="page-item"><a class="page-link" th:if="${facility.hasPrevious()}"
+                                 th:href="@{'/facility'(page=${facility.number - 1},name=${name})}"
+                                 th:text="${facility.number }"></a>
+        </li>
+
+        <li class="page-item active">
+            <a class="page-link" th:text="${facility.number + 1}"
+               th:href="@{'/facility'(page=${facility.number},name=${name})}">
+                <span class="sr-only"></span></a>
+        </li>
+
+        <li class="page-item"><a class="page-link" th:if="${facility.hasNext()}"
+                                 th:href="@{'/facility'(page=${facility.number + 1},name=${name})}"
+                                 th:text="${facility.number + 2}"></a>
+        </li>
+        <li class="page-item"><a class="page-link" th:href="@{'/facility'(page=${facility.number + 1},name=${name})}"
+                                 th:if="${facility.hasNext()}">Next</a></li>
+
+    </ul>
+</div>
+
+
+<div class="modal fade" id="deleteFacility" tabindex="-1" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel1">Are you sure you want to delete ?</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form th:action="@{/facility/delete}" method="GET">
+                <div class="modal-body">
+                    <span class="h6">Facility: </span><strong id="nameDelete" class="text-danger ps-2"></strong>
+                    <input type="hidden" name="idDelete" id="idDelete" readonly/>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger" value="delete">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function facilityDelete(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = name;
+        debugger
+    }
+</script>
+</body>
+</html>

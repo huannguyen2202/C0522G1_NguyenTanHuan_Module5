@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>view</title>
+</head>
+<body>
+<div th:replace="layout_new :: head"></div>
+<form id="form">
+<h2>View Customer</h2>
+<p>
+    <a th:href="@{/customer}">Back to Customer list</a>
+</p>
+<div id="detail">
+    <div class="cusdetail">
+<!--        <label>Name: </label>-->
+        <b>Name: </b>
+        <label th:text="${customers.customerName}"></label>
+    </div>
+    <div class="cusdetail">
+<!--        <label>Birthday: </label>-->
+        <b>Birthday: </b>
+        <label th:text="${customers.birthday}"></label>
+    </div>
+    <div class="cusdetail">
+<!--        <label>Gender: </label>-->
+        <b>Gender: </b>
+        <label th:switch="${customers.gender}">
+            <span th:case="0">Male</span>
+            <span th:case="1">Female</span>
+            <span th:case="*">LGBT</span>
+        </label>
+    </div>
+    <div class="cusdetail">
+<!--        <label>ID Card: </label>-->
+        <b>ID Card: </b>
+        <label th:text="${customers.idCard}"></label>
+    </div>
+    <div class="cusdetail">
+<!--        <label>Phone: </label>-->
+        <b>Phone: </b>
+        <label th:text="${customers.phone}"></label>
+    </div>
+    <div class="cusdetail">
+<!--        <label>Email: </label>-->
+        <b>Email: </b>
+        <label th:text="${customers.email}"></label>
+    </div>
+    <div class="cusdetail">
+<!--        <label>Address: </label>-->
+        <b>Address: </b>
+        <label th:text="${customers.address}"></label>
+    </div>
+    <div class="cusdetail">
+<!--        <label>Customer Type: </label>-->
+        <b>ACustomer Type Name: </b>
+        <label th:if="${customers.customerType}" th:text="${customers.customerType.customerTypeName}"></label>
+        <label th:unless="${customers.customerType}"></label>
+    </div>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,82 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "customerName": "Võ Văn Tý",
+      "customerBirthday": "2001-11-20",
+      "customerGender": 0,
+      "customerIdCard": "123456789",
+      "customerPhone": "0901111111",
+      "customerEmail": "cu.ty@gmail.com",
+      "customerAddress": "bản LắkKonKu, Gia Lai",
+      "customerType": {
+        "id": 3,
+        "customerTypeName": "Gold"
+      }
+    },
+    {
+      "id": 2,
+      "customerName": "Hồ Thị Thủy Lợi",
+      "customerBirthday": "1997-02-14",
+      "customerGender": 2,
+      "customerIdCard": "132314664",
+      "customerPhone": "0902222222",
+      "customerEmail": "ho.thuy.loi@gmail.com",
+      "customerAddress": "chùa Linh Ứng, Đà Nẵng",
+      "customerType": {
+        "id": 5,
+        "customerTypeName": "Diamond"
+      }
+    },
+    {
+      "id": 3,
+      "customerName": "Hồ Minh Trí",
+      "customerBirthday": "1998-12-12",
+      "customerGender": 0,
+      "customerIdCard": "132314543",
+      "customerPhone": "0903333333",
+      "customerEmail": "dong.mau.quy@gmail.com",
+      "customerAddress": "phường Mân Đàn, TT Huế",
+      "customerType": {
+        "id": 2,
+        "customerTypeName": "Silver"
+      }
+    },
+    {
+      "customerName": "Huỳnh văn nam",
+      "customerBirthday": "2004-12-25",
+      "customerGender": 0,
+      "customerIdCard": "098764532",
+      "customerPhone": "0905435546",
+      "customerEmail": "namhuynh191193@gmail.com",
+      "customerAddress": "Quảng Nam",
+      "customerType": {
+        "id": 4,
+        "customerTypeName": "Platinum"
+      },
+      "id": 4
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "customerTypeName": "Member"
+    },
+    {
+      "id": 2,
+      "customerTypeName": "Silver"
+    },
+    {
+      "id": 3,
+      "customerTypeName": "Gold"
+    },
+    {
+      "id": 4,
+      "customerTypeName": "Platinum"
+    },
+    {
+      "id": 5,
+      "customerTypeName": "Diamond"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới</title>
+</head>
+<body id="backGroundBody">
+<div th:replace="layout_new :: head"></div>
+<div id="form">
+    <h2>Delete Customer</h2>
+    <form th:action="@{/customer/delete}" th:object="${customers}" method="post">
+        <div>
+            <input type="hidden" th:field="*{id}"/>
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" th:field="*{customerName}"/>
+            <p style="color: red" th:if="${#fields.hasErrors('customerName')}"
+               th:errors="*{customerName}"></p>
+        </div>
+        <div>
+            <label>Birthday</label>
+            <input type="date" th:field="*{birthday}"/>
+        </div>
+        <div>
+            <label>Gender</label>
+            <input type="radio" th:field="*{gender}" value="0"/>Male
+            <input type="radio" th:field="*{gender}" value="1"/>Female
+            <input type="radio" th:field="*{gender}" value="2"/>LGBT
+        </div>
+        <div>
+            <label>ID Card</label>
+            <input type="text" th:field="*{idCard}"/>
+        </div>
+        <div>
+            <label>Phone</label>
+            <input type="text" th:field="*{phone}"/>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="email" th:field="*{email}"/>
+        </div>
+        <div>
+            <label>Address</label>
+            <input type="text" th:field="*{address}"/>
+        </div>
+        <div>
+            <label>Category: </label>
+            <select th:field="*{customerType}">
+                <option th:each="items: ${customerTypes}" th:text="${items.customerTypeName}"
+                        th:value="${items.customerTypeId}"></option>
+            </select>
+        </div>
+        <input type="submit" value="Delete"/>
+    </form>
+</div>
+</body>
+</html>

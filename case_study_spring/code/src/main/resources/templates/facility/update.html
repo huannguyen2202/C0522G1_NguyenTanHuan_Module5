@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới</title>
+</head>
+<body id="backGroundBody">
+<div th:replace="layout_new :: head"></div>
+<div id="form">
+    <h2>Update Facility</h2>
+    <p>
+        <a th:href="@{/facility}">Back to facility list</a>
+    </p>
+
+    <form th:action="@{/facility/update}" th:object="${facility}" method="post">
+        <div>
+            <input type="hidden" th:field="*{id}"/>
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" th:field="*{name}"/>
+            <p style="color: red" th:if="${#fields.hasErrors('name')}"
+               th:errors="*{name}"></p>
+        </div>
+        <div>
+            <label>Area</label>
+            <input type="text" th:field="*{area}"/>
+        </div>
+        <div>
+            <label>Cost</label>
+            <input type="text" th:field="*{cost}"/>
+            <p style="color: red" th:if="${#fields.hasErrors('cost')}"
+               th:errors="*{cost}"></p>
+        </div>
+        <div>
+            <label>Max People</label>
+            <input type="text" th:field="*{maxPeople}"/>
+            <p style="color: red" th:if="${#fields.hasErrors('maxPeople')}"
+               th:errors="*{maxPeople}"></p>
+        </div>
+        <div id="standardRoom">
+            <label>Standard Room</label>
+            <input type="text" th:field="*{standardRoom}"/>
+            <p style="color: red" th:if="${#fields.hasErrors('standardRoom')}"
+               th:errors="*{standardRoom}"></p>
+        </div>
+        <div id="poolArea">
+            <label>Pool Area</label>
+            <input type="text" th:field="*{poolArea}"/>
+        </div>
+        <div id="description">
+            <label>Description</label>
+            <input type="text" th:field="*{descriptionOtherConvenience}"/>
+        </div>
+        <div id="numberOfFloor">
+            <label>Number Of Floor</label>
+            <input type="text" th:field="*{numberOfFloors}"/>
+        </div>
+        <div id="facilityFree">
+            <label>Facility Free</label>
+            <input type="text" th:field="*{facilityFree}"/>
+        </div>
+        <div>Rent Name: </label>
+            <select th:field="*{rentType}">
+                <option th:value="${''}">Rent Type</option>
+                <option th:each="rent: ${rentTypes}" th:text="${rent.name}"
+                        th:value="${rent.id}"></option>
+            </select>
+        </div>
+        <div>
+            <label>Facility Name</label>
+            <select th:field="*{facilityType}">
+                <option th:value="${''}">Facility Type</option>
+                <option th:each="item: ${facilityTypes}" th:text="${item.name}"
+                        th:value="${item.id}"></option>
+            </select>
+        </div>
+        <input type="submit" value="Edit"/>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="backGroundBody">
+<div th:replace="layout_new :: head"></div>
+<h2>Attach Facility List</h2>
+<p>
+    <a th:href="@{/contract}">Back to Customer list</a>
+</p>
+
+<h3 th:text="${message}" style="color: blue"></h3>
+
+<table class="table table-bordered" id="furama">
+    <thead>
+    <tr>
+        <th> # </th>
+        <th>Attach Facility Name</th>
+        <th>Cost</th>
+        <th>Unit</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row,rowStat : ${attachFacilityList}">
+        <td th:text="${rowStat.count}"></td>
+        <td th:text="${row.nameAttach}"></td>
+        <td th:text="${row.cost}"></td>
+        <td th:text="${row.unit}"></td>
+        <td th:text="${row.status}"></td>
+    </tr>
+    </tbody>
+</table>
